@@ -1,0 +1,11 @@
+## History
+
+Development of the Julia programming language began in 2009. Jeff Bezanson, Stefan Karpinsky, Viral B. Shah and Alan Edelman, the creators of Julia and founders of Julia Computing Inc., set out to create a language that was both fast and high-level. The result of their efforts was a high-level dynamic programming language designed to suit the needs of high-performance numerical analysis and computational science.
+
+Before Julia, programmers had to be satisfied with a "speed for convenience" tradeoff. This meant they first had to write their code in MATLAB, Python or R and then rewrite it ("translate it") in languages such as C or FORTRAN in order to speed up the computations.
+
+Julia was designed to bridge this gap. First of all, it gives you the possibility of writing code that uses the memory and the CPU almost as effectively as it would be done in C, but without the need to rely on it or on any other language. Besides this, Julia is as flexible as a dynamic and not strongly typed language, and borrows from the likes of Python, Ruby, Perl, R, etc. 
+
+## Characteristics
+
+Julia is considered a multiparadigm language and fits the dynamic programming, multiple dispatch and parallel paradigms.

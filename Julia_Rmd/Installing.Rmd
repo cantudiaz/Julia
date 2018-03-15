@@ -1,0 +1,48 @@
+# Installing Julia and the REPL
+
+## Installing Julia
+
+Julia can be downloaded in executable form from the [Julia Language Downloads webpage](https://julialang.org/downloads/). Its is available for Windows, OS X and Linux in both 32- and 64-bit format. As of the time of writing of this document, the Current Release of the language was v0.6.2. 
+
+## Windows
+
+The latest Julia release is available for 32- and 64-bit versions of Windows 7 and later. to install, users should follow the following steps:
+
+1. Download the corresponding Windows julia.exe installer from the [Julia Downloads webpage](https://julialang.org/downloads/).
+2. Run the downloaded executable file to extract Julia in a reasonable destination folder, such as `C:\julia`.
+3. Double click the Julia shortcut inside the recently unpacked folder.
+
+Additional [steps](https://github.com/JuliaLang/julia/blob/master/README.windows.md) are required to succesfully run Julia in Windows.
+
+## macOS
+
+On macOS 10.8 and later releases, these steps should be followed to succesfully install Julia:
+
+1. Download the `Julia-<version>.dmg` file provided in the [Julia Downloads webpage](https://julialang.org/downloads/). This file contains the Julia app.
+2. Installation is identical to that of any other applications in macOS; just copy the `Julia-<version>.dmg` to the hard-drive or run from the disk image.
+
+As an alternative, you can also install Julia directly from your terminal using the following command:
+
+`brew cask install julia`
+
+## Linux
+
+Although there are Linux Distribution-Specifica Packages available for Fedora, RHEL, CentOS, and Scientific Linux, it is recommended to install the official generic Linux binaries from the [Julia Downloads webpage](https://julialang.org/downloads/) because the former may not use the right versions of Julia dependencies nor include important patches the official binaries ship with.
+
+In order to install the generic Linux binaries, you need to follow these steps:
+
+1. Extract the `tar.gz` file downloaded from the [Julia Downloads webpage](https://julialang.org/downloads/) to any folder on your computer.
+2. Add Julia’s `bin` folder to your system `PATH` environment variable.
+3. Invoke the Julia executable by using its full path, as in `<where you extracted Julia>/bin/julia`.
+
+This means that, in order to create a symbolic link inside the `/usr/local/bin` folder, you should type the following command on the terminal:
+
+`sudo ln -s <where you extracted the julia archive>/bin/julia /usr/local/bin/julia`
+
+## REPL
+
+If you are using either Windows or macOS, you can run Julia from a menu or desktop icon, whereas if you are using Linux, you should type `julia`
+
+
+
+
