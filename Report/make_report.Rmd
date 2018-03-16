@@ -1,0 +1,31 @@
+---
+title: "Julia Programming Language"
+author:
+- name: Saúl Caballero Ramírez
+  mail: saul.caballero.ramirez@gmail.com
+- name: Luis Fernando Cantú Díaz de León
+  mail: lf.cantudiaz@gmail.com
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+---
+
+```{r set_params, echo = FALSE}
+knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
+knitr::opts_chunk$set(cache=TRUE, comment = "julia> ")
+library(tibble)
+library(magrittr)
+library(knitr)
+```
+
+\pagebreak
+
+```{r child = "./Chapters/Installing.Rmd"}
+```
+
+```{r child = "./Chapters/Introduction.Rmd"}
+```
+
+```{r child = "./Chapters/Data types.Rmd"}
+```

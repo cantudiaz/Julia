@@ -1,0 +1,93 @@
+# Types
+
+## Integers
+
+There are different integers primitives that are built-in:
+
+```{r int_types, echo = FALSE}
+data_frame(
+  Type = c(paste("Int", 2 ^ seq(3,6), sep = ""), paste("UInt", 2 ^ seq(3,6), sep = "")),
+  `Smallest Value` = c(paste("-2^", (2^seq(3, 6) - 1), sep = "" ), rep(0,4)),
+  `Largest Value` = c(paste("2^", (2^seq(3, 6) - 1),"\t-1",sep = "" ), paste("2^", (2^seq(3, 6)),"\t-1",sep = "" ))
+) %>% 
+  kable
+```
+
+Since Julia is **not** an **strongly typed** language it has to have a default integer type and it depends on the architecture of the CPU. Modern computers run on a 64-bit architecture and the default would be *Int64*.
+
+Signed integers would be written as normal integers, i.e $1$ , $123456$. Unsigned integers are input and output using `0x` prefix and hexadecimal and the size is determined by the number of hex digits used:
+
+```{julia unsigned_int}
+typeof(0x1)
+typeof(0x123)
+typeof(0x1234567)
+typeof(0x123456789abcdef)
+```
+
+If you forget the minimum or maximum value of each *integer type* you can use `typemin()` and `typemax()` functions:
+
+```{julia type_min_max}
+typemin(Int64)
+typemax(Int64)
+```
+
+### Overflow behavior
+
+The arithmetic of Julia *integers* is of the form of **modular arithmetic**, i.e **wrap around** behavior. This functionality is reflects the arithmetic of integers on computers. This is an important thing to consider when you make operations where overflow might happen. 
+
+```{julia wrap_around_arithmetic}
+typemax(Int64) + 1
+```
+
+## Floating-Point Numbers
+
+There are different float primitives that are built-in:
+
+```{r float_types, echo = FALSE}
+data_frame(
+  Type = paste("Float", 2 ^ seq(4,6), sep = ""),
+  Precision = c("half", "single", "double"),
+  Bits = (2^seq(4, 6))
+) %>% 
+  kable
+```
+
+To let *Julia* know you require floating point numbers the you need to add **.** to the number or use scientific notation:
+
+```{julia, float_declaration}
+1.
+1.0
+0.1
+.1
+1e0
+```
+
+If you are working on a *64-bit* machine this sort of numbers will be of the type `Float64`, if you want to use `Float32` you will need to use scientific notation and instead of *e* use *f*:
+
+```{julia float32_declaration}
+1f0
+```
+
+### Special values
+
+In all types of float there are special values:
+
+- **Positive Infinity** `Inf`: value greater than the largest value of the floating point.
+- **Negative Infinity** `-Inf`: value less than the minimum value of the floating point.
+- **Not a number** `NaN`: some value not equal to any floating point value.
+
+## Operators
+
+```{r arithmetic_operators, echo = FALSE}
+data_frame(
+  Expression = c("+", "-", "* ", "/", "\\", "^", "%"),
+  Operator = c("Plus", "Minus", "Times", "Divide", "Inverse Divide", "Power", "Remainder"),
+  Examples = c("x + y", "x - y", "x \\* y", "x / y", "y  x = x / y", "x ^ y", "x % y")
+) %>% 
+  kable
+```
+
+
+## Complex and Rational Numbers
+
+## Strings
